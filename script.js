@@ -304,3 +304,20 @@ function updateEmptyNote(notesToCheck = notes) {
 
 renderNotes(currentFilterTag);
 updateEmptyNote();
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  const getStartedScreen = document.getElementById("getStartedScreen");
+  const appWrapper = document.getElementById("appWrapper");
+  const startBtn = document.getElementById("startBtn");
+
+  setTimeout(() => {
+    loader.style.display = "none";
+    getStartedScreen.classList.remove("hidden");
+  }, 1500);
+
+  startBtn.addEventListener("click", () => {
+    getStartedScreen.classList.add("hidden");
+    appWrapper.classList.remove("hidden");
+  });
+});
